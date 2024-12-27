@@ -1,1 +1,1 @@
-# UniversitiOfMiskolc
+# Miskolci Egyetem
