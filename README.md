@@ -1,1 +1,1 @@
-# Miskolci Egyetem TEST
+# Miskolci Egyetem working folder
