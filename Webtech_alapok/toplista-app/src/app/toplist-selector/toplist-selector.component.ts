@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Toplist } from './toplist.model';
+import { Toplist } from '../toplist.model';
 
 @Component({
   selector: 'app-toplist-selector',
