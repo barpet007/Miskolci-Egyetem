@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ToplistSelectorComponent } from './toplist-selector/toplist-selector.component';
 import { ToplistEditorComponent } from './toplist-editor/toplist-editor.component';
 import { ToplistCreateComponent } from './toplist-create/toplist-create.component';
-import { Toplist } from './toplist.model';
+import { Toplist } from './toplist.model'; 
 
 @Component({
   selector: 'app-root',
