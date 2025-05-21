@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { Toplist } from './toplist.model';
+import { ToplistSelectorComponent } from './toplist-selector/toplist-selector.component';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   template: `
     <app-toplist-selector
       [toplists]="toplists"
