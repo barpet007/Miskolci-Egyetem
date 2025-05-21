@@ -1,12 +1,11 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { Toplist } from '../toplist.model';
-import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Toplist } from '../toplist.model';
 
 @Component({
   selector: 'app-toplist-create',
   standalone: true,
-  imports: [CommonModule,FormsModule],
+  imports: [FormsModule],
   template: `
     <h3>Új toplista létrehozása</h3>
     <input [(ngModel)]="name" placeholder="Lista neve">
