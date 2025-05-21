@@ -1,19 +1,22 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms'; // <-- EZT ADD HOZZÁ
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-// ...további importok...
+import { ToplistSelectorComponent } from './toplist-selector/toplist-selector.component';
+import { ToplistEditorComponent } from './toplist-editor/toplist-editor.component';
+import { ToplistCreateComponent } from './toplist-create/toplist-create.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    // ...további komponensek...
+    ToplistSelectorComponent,
+    ToplistEditorComponent,
+    ToplistCreateComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule, // <-- EZT IS ADD HOZZÁ
-    // ...további modulok...
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
