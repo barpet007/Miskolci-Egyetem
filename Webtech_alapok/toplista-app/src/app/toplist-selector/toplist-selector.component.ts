@@ -1,8 +1,12 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Toplist } from '../toplist.model';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-toplist-selector',
+  standalone: true,
+  imports: [CommonModule,FormsModule],
   template: `
     <h3>Válassz toplistát!</h3>
     <ul>

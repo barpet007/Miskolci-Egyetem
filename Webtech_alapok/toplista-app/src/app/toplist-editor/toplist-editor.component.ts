@@ -1,8 +1,12 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Toplist, ToplistItem } from '../toplist.model';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-toplist-editor',
+    standalone: true,
+  imports: [CommonModule,FormsModule],
   template: `
     <div *ngIf="toplist">
       <h3>{{toplist.name}} szerkesztése</h3>
