@@ -1,10 +1,19 @@
 import { Component } from '@angular/core';
-import { Toplist } from './toplist.model';
+import { CommonModule } from '@angular/common';
 import { ToplistSelectorComponent } from './toplist-selector/toplist-selector.component';
+import { ToplistEditorComponent } from './toplist-editor/toplist-editor.component';
+import { ToplistCreateComponent } from './toplist-create/toplist-create.component';
+import { Toplist } from './toplist.model';
 
 @Component({
   selector: 'app-root',
   standalone: true,
+  imports: [
+    CommonModule,
+    ToplistSelectorComponent,
+    ToplistEditorComponent,
+    ToplistCreateComponent
+  ],
   template: `
     <app-toplist-selector
       [toplists]="toplists"
@@ -39,7 +48,6 @@ export class AppComponent {
     this.creating = false;
   }
   onSave(list: Toplist) {
-    // már referenciában szerkesztjük, csak frissítjük a nézetet
     alert('Mentve!');
   }
 }
