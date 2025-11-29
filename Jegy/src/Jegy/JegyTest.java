@@ -7,7 +7,8 @@ import java.util.Scanner;
 import jegy.Jegy.Kedvezmeny;
 
 
-public class Jegy_test {
+@SuppressWarnings("java:S106")
+public class JegyTest {
 
 	public static void main(String[] args) 
 	{

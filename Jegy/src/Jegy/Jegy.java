@@ -16,7 +16,8 @@ public abstract class Jegy {
 		this.datum = datum;
 	}
 	
-	public Jegy (LocalDate datum, Kedvezmeny kedvezmeny) {
+	@SuppressWarnings("unused")
+	protected Jegy (LocalDate datum, Kedvezmeny kedvezmeny) {
 		this.datum =datum;
 	}
 	
