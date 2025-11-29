@@ -1,13 +1,10 @@
-package Jegy;
+package jegy;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Scanner;
-import java.util.Set;
 
-import Jegy.Jegy.Kedvezmeny;
+import jegy.Jegy.Kedvezmeny;
 
 
 public class Jegy_test {
@@ -23,14 +20,11 @@ public class Jegy_test {
 		for (int i = 0; i < icjegyArray.length; i++) {
 			System.out.println("IC"+(i+1)+ "neve:");
 			
-//			System.out.print("neve: ");
 			String icname = input.nextLine();
-//			input.nextLine();
 			
 			System.out.print("Dátum: ");
 			String datummost = input.nextLine();
 			LocalDate datum = LocalDate.parse(datummost);
-//			input.nextLine();
 			
 			
 			System.out.print("Kedvezmeny: ");
@@ -41,25 +35,20 @@ public class Jegy_test {
 				break;
 			case "NYUGDIJAS": kedvezmenytype=Kedvezmeny.NYUGDIJAS;
 				break;
-			case "TELJESARU": kedvezmenytype=Kedvezmeny.TELJESARU;
+			default:
 				break;
 			}
 			
 			int kocsiosztaly = readcarClass();
-//			input.nextLine();
 			
 			int tavolsag = readDistance();
-//			input.nextLine();
 			
 			icjegyArray[i] = new ICjegy(icname, datum, kedvezmenytype, kocsiosztaly,tavolsag);	
 			
 		}
 		
 		input.close();
-		//Kiiratas
 		
-//		for (int i = 0; i < icjegyArray.length; i++) {
-//			System.out.println("#"+(i+1)+"IC: " + icjegyArray[i].toString());
 		listArray(icjegyArray);
 		
 		Arrays.sort(icjegyArray, new ICjegy.NameSorter());
@@ -68,19 +57,12 @@ public class Jegy_test {
 		
 		
 		System.out.println("A legtávolabb utazó:" + getLogenstway(icjegyArray));
-		
-		
-		
-		}
-
+	}
 	
-		
-		
-//	}
 	
 	public static void listArray(ICjegy[] icjegyArray) {
 			for(ICjegy item: icjegyArray) {
-				System.out.println(item.toString());
+				System.out.println(item);
 			}
 		}
 	
@@ -104,8 +86,8 @@ public class Jegy_test {
 	        }
 	    } while (!ok);
 	    
+	    sc.close();
 	    return icjegydb;
-	    
 	}
 	
 	private static int readcarClass() {
@@ -128,8 +110,8 @@ public class Jegy_test {
 	        }
 	    } while (!ok);
 	    
+	    sc.close();
 	    return kocsiosztaly;
-	    
 	}
 	private static int readDistance() {
 	    Scanner sc = new Scanner(System.in);
@@ -151,28 +133,22 @@ public class Jegy_test {
 	        }
 	    } while (!ok);
 	    
+	    sc.close();
 	    return tavolsag;
-	    
 	}
 	
-	public static ICjegy getLogenstway (ICjegy[] icjegyArray) 
-		{
-			{
-		    	int max = 0;
-		    	int maxIndex = 0;
-		    	for (int i = 0; i < icjegyArray.length; i++) 
-			    	{
-						if (icjegyArray[i].getTavolsag() > max) 
-						{
-							max = icjegyArray[i].getTavolsag();
-							maxIndex = i;
-						}
-		
-					}
-				return icjegyArray[maxIndex];
-		    }
+	public static ICjegy getLogenstway(ICjegy[] icjegyArray) {
+		int max = 0;
+		int maxIndex = 0;
+		for (int i = 0; i < icjegyArray.length; i++) {
+			if (icjegyArray[i].getTavolsag() > max) {
+				max = icjegyArray[i].getTavolsag();
+				maxIndex = i;
+			}
 		}
+		return icjegyArray[maxIndex];
 	}
+}
 	
 
 

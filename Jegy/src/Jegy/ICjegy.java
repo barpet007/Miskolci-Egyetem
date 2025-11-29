@@ -1,7 +1,8 @@
-package Jegy;
+package jegy;
 
 import java.time.LocalDate;
 import java.util.Comparator;
+import java.util.Random;
 
 public class ICjegy extends Jegy {
 	
@@ -9,7 +10,7 @@ public class ICjegy extends Jegy {
 	private int kocsiosztaly;
 	private int tavolsag;
 	private int kmAr;
-	private static final int potjegy=450;
+	private static final int POTJEGY = 450;
 	private double mertek;
 
 	
@@ -22,13 +23,19 @@ public class ICjegy extends Jegy {
 			case 1: setKmAr(30);
 					break;
 			case 2:setKmAr(25);
-					break;}
+					break;
+			default:
+					break;
+		}
 		switch (kedvezmeny) {
 		case DIAK:mertek=50.0/100.0;
 			break;
 		case NYUGDIJAS:mertek=90.0/100.0;
 			break;	
 		case TELJESARU:mertek=1;
+			break;
+		default:
+			mertek=1;
 			break;
 		}
 		
@@ -38,7 +45,7 @@ public class ICjegy extends Jegy {
 
 	public ICjegy(String icname,LocalDate datum, Kedvezmeny kedvezmeny, int kocsiosztaly) {
 		
-		this(icname,datum,kedvezmeny,kocsiosztaly,(int) (Math.random()*1001)+10);
+		this(icname,datum,kedvezmeny,kocsiosztaly,new Random().nextInt(991) + 10);
 	
 		}
 	
@@ -77,12 +84,12 @@ public class ICjegy extends Jegy {
 	}
 
 	public static int getPotjegy() {
-		return potjegy;
+		return POTJEGY;
 	}
 
 	@Override
-	public int Jegyar(int jegyar,Kedvezmeny kedvezmeny) {
-		return jegyar=(int) (((tavolsag*kmAr)*mertek)+potjegy);
+	public int jegyar(int jegyar,Kedvezmeny kedvezmeny) {
+		return (int) (((tavolsag*kmAr)*mertek)+POTJEGY);
 	}
 	
 	@Override

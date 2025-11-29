@@ -1,4 +1,4 @@
-package Jegy;
+package jegy;
 
 import java.time.LocalDate;
 
@@ -14,7 +14,7 @@ public abstract class Jegy {
 
 	public void setDatum(LocalDate datum) {
 		this.datum = datum;
-	};
+	}
 	
 	public Jegy (LocalDate datum, Kedvezmeny kedvezmeny) {
 		this.datum =datum;
@@ -26,6 +26,6 @@ public abstract class Jegy {
 		return " Dátum=" + datum + " ";
 	}
 
-	public abstract int Jegyar(int jegyar,Kedvezmeny kedvezmeny);
+	public abstract int jegyar(int jegyar,Kedvezmeny kedvezmeny);
 	
 }
